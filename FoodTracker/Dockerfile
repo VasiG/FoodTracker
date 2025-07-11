@@ -5,7 +5,7 @@ WORKDIR /app
 
 # Copy project files
 COPY *.csproj ./
-RUN dotnet restore
+RUN dotnet restore FoodTracker.csproj
 
 # Copy the rest of the app and build it
 COPY . ./
