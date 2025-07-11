@@ -1,0 +1,61 @@
+﻿@model IEnumerable<FoodTracker.Data.Measure>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Blood sugar logs</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-info">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr class="table-info">
+            <th>
+                @Html.DisplayNameFor(model => model.MeasureDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SugarLevelBefore)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SugarLevelAfter)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MealType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Notes)
+            </th>
+            <th>
+                Actions
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MeasureDate)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.SugarLevelBefore)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.SugarLevelAfter)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MealType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Notes)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
