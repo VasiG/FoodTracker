@@ -7,8 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\Images\1154660.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="9.0.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="wwwroot\Images\1154660.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>

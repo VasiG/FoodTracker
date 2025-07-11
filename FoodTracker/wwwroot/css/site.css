@@ -18,5 +18,8 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    background-image: url('/Images/1154660.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin-bottom: 60px;
 }
