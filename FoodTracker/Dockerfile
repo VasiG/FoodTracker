@@ -17,7 +17,7 @@ WORKDIR /app
 COPY --from=build /out ./
 
 # Expose the default port
-EXPOSE 8080
+EXPOSE 7143
 
 # Start the app
 ENTRYPOINT ["dotnet", "FoodTracker.dll"]
