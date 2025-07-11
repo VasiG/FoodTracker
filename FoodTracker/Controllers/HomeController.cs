@@ -53,6 +53,7 @@ namespace FoodTracker.Controllers
             if (ModelState.IsValid)
             {
                 measure.MealType = Enum.Parse<MealType>(measure.MealType).ToString();
+                measure.MeasureDate = DateTime.SpecifyKind(measure.MeasureDate, DateTimeKind.Utc);
                 _context.Add(measure);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -93,6 +94,7 @@ namespace FoodTracker.Controllers
                 try
                 {
                     measure.MealType = Enum.Parse<MealType>(measure.MealType).ToString();
+                    measure.MeasureDate = DateTime.SpecifyKind(measure.MeasureDate, DateTimeKind.Utc);
                     _context.Update(measure);
                     await _context.SaveChangesAsync();
                 }
